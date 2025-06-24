@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3001
 
 router.use(express.static('public'))
 
-//don't forget to add all the sorts, counts and ids for the daos and routes 
 const endpoints = ['book', 'author', 'format', 'genre', 'publishing']
 
 endpoints.forEach(endpoint =>{

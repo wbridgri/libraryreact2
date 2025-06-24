@@ -112,30 +112,30 @@ const AddBook =(props)=>{
                             </div>
                         </div>
                         <div className="row mb-3">
-  <div className="col">
-    <label className="form-label">Rating:</label>
-    <div className="form-check">
-      <input className="form-check-input" type="radio" name="rating" id="rate1" value="1" onChange={props.handleChange} />
-      <label className="form-check-label" htmlFor="rate1">1</label>
-    </div>
-    <div className="form-check">
-      <input className="form-check-input" type="radio" name="rating" id="rate2" value="2" onChange={props.handleChange} />
-      <label className="form-check-label" htmlFor="rate2">2</label>
-    </div>
-    <div className="form-check">
-      <input className="form-check-input" type="radio" name="rating" id="rate3" value="3" onChange={props.handleChange} />
-      <label className="form-check-label" htmlFor="rate3">3</label>
-    </div>
-    <div className="form-check">
-      <input className="form-check-input" type="radio" name="rating" id="rate4" value="4" onChange={props.handleChange} />
-      <label className="form-check-label" htmlFor="rate4">4</label>
-    </div>
-    <div className="form-check">
-      <input className="form-check-input" type="radio" name="rating" id="rate5" value="5" onChange={props.handleChange} />
-      <label className="form-check-label" htmlFor="rate5">5</label>
-    </div>
-  </div>
-</div>
+                            <div className="col">
+                                <label className="form-label">Rating:</label>
+                                <div className="form-check">
+                                <input className="form-check-input" type="radio" name="rating" id="rate1" value="1" onChange={props.handleChange} />
+                                <label className="form-check-label" htmlFor="rate1">1</label>
+                                </div>
+                                <div className="form-check">
+                                <input className="form-check-input" type="radio" name="rating" id="rate2" value="2" onChange={props.handleChange} />
+                                <label className="form-check-label" htmlFor="rate2">2</label>
+                                </div>
+                                <div className="form-check">
+                                <input className="form-check-input" type="radio" name="rating" id="rate3" value="3" onChange={props.handleChange} />
+                                <label className="form-check-label" htmlFor="rate3">3</label>
+                                </div>
+                                <div className="form-check">
+                                <input className="form-check-input" type="radio" name="rating" id="rate4" value="4" onChange={props.handleChange} />
+                                <label className="form-check-label" htmlFor="rate4">4</label>
+                                </div>
+                                <div className="form-check">
+                                <input className="form-check-input" type="radio" name="rating" id="rate5" value="5" onChange={props.handleChange} />
+                                <label className="form-check-label" htmlFor="rate5">5</label>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div className="row mb-3">
                             <div className="col">

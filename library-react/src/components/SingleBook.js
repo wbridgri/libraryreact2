@@ -30,11 +30,11 @@ const SingleBook =()=>{
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h2 className="single-book-heading">{book.title}</h2>
-                        <img src={`/images/${book.cover_image}`} alt="placeholder img" className="img-fluid image cover-single-img" />
+                        <h2 className="text-center single-book-heading">{book.title}</h2>
+                        <img src={`/images/${book.cover_image}`} alt={book.title} className="img-fluid image cover-single-img" />
                     </div>
                     <div className="col">
-                        <h3 className="book-info">Info</h3>
+                        <h3 className="book-info text-center">Info</h3>
                         <ul className="book-info-list list-group list-group-flush book-style">
                             <li className="list-group-item">Author: {book.author}</li>
                             <li className="list-group-item">Publisher: {book.publisher}</li>

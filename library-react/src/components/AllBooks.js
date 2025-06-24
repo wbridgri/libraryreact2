@@ -57,7 +57,7 @@ const AllBooks =(props)=>{
     return (
         <main className="main" id="AllBooksMain">
             <div className="container">
-                <h2 className="text-capitalize">Choose your favorite</h2>
+                <h2 className="text-capitalize text-center">Choose your favorite</h2>
                 <p className="text-end">
                     <Link to="/addBook">Add a Book </Link>
                 </p>

@@ -32,7 +32,7 @@ const AllData =( {table, name} )=> {
     return (
         <main className="main" id="alllDataMain">
             <div className="container">
-                <h2 className="all-data-heading text-capitalize">All {name}s</h2>
+                <h2 className="all-data-heading text-capitalize text-center">All {name}s</h2>
                 <div className="row row-cols-1 row-cols-md-3">
                     { allDataCardComponents }
                 </div>

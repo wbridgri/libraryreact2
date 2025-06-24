@@ -12,7 +12,7 @@ const BookCard =(props)=> {
                     
                 </section>
                 <footer className="card-footer">
-                    <button className="btn btn-outline-light">
+                    <button className="btn view-btn">
                         <Link to={`/book/${props.id}`}>View more</Link>
                     </button>
                 </footer>

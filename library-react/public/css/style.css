@@ -1,0 +1,38 @@
+*{box-sizing: border-box;}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #14171C;
+    scroll-behavior: smooth;
+    color:#eaeae2
+}
+
+.greetings{
+    font-size: 45px;
+}
+
+.main-card {
+    background-color: #14171C;
+    
+}
+
+.nav-link {
+    list-style: none;
+    color: #eaeae2;
+}
+.nav-link:hover {
+    list-style: none;
+    color: #F27405;
+}
+
+.heading {
+    color: #eaeae2;
+}
+.heading:hover {
+    color: #F27405;
+}
+
+.featured {
+    color: #eaeae2;
+}

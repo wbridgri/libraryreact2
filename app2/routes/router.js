@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const PORT = process.env.PORT || 3001
 
 router.use(express.static('public'))
 
@@ -12,11 +11,11 @@ endpoints.forEach(endpoint =>{
 
 router.get('/api', (req, res) => {
     res.json({
-        'Book': `http://localhost:${PORT}/api/book`,
-        'Author': `http://localhost:${PORT}/api/author`,
-        'Publishing Company': `http://localhost:${PORT}/api/publishing`,
-        'Format': `http://localhost:${PORT}/api/format`,
-        'Genre': `http://localhost:${PORT}/api/genre`
+        'Book': '/api/book',
+        'Author': '/api/author',
+        'Publishing Company': '/api/publishing',
+        'Format': '/api/format',
+        'Genre': '/api/genre'
     })
 })
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { apiUrl } from '../config/api'
 
 import AllDataCard from './AllDataCard'
 
@@ -10,7 +11,7 @@ const AllData =( {table, name} )=> {
 
     useEffect(()=> {
 
-        const url = `http://localhost:3001/api/${table}`
+        const url = apiUrl(`/api/${table}`)
 
         axios.get(url).then(res => setDataArr(res.data))
     }, [table])

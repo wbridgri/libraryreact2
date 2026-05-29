@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios'
+import { apiUrl } from '../config/api'
 
 const SingleBook =()=>{
 
@@ -11,7 +12,7 @@ const SingleBook =()=>{
     const params = useParams()
 
     useEffect(()=> {
-        const url = `http://localhost:3001/api/book/${params.id}`
+        const url = apiUrl(`/api/book/${params.id}`)
 
         axios.get(url).then(res => {
             setBook(res.data)

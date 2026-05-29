@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router'
 import axios from 'axios'
+import { apiUrl } from '../config/api'
 
 import BookCard from './BookCard'
 
@@ -22,13 +23,13 @@ const AllBooks =(props)=>{
     useEffect(()=> {
 
         if (table == 'book') {
-            const url = `http://localhost:3001/api/${table}`
+            const url = apiUrl(`/api/${table}`)
     
             axios.get(url).then(res => setBooks(res.data))
 
         } else {
             setHeading(params.endpoint)
-            const url = `http://localhost:3001/api/${table}/${table}/${params.endpoint}`
+            const url = apiUrl(`/api/${table}/${table}/${params.endpoint}`)
 
             axios.get(url).then(res => setBooks(res.data))
         }

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { Routes, Route } from "react-router"
 import axios from "axios"
-
-
+import { apiUrl } from "./config/api"
 
 import Header from "./components/Header"
 import Main from "./components/Main"
@@ -65,7 +64,7 @@ const App =()=>{
 
         axios({
             method: 'post',
-            url: 'http://localhost:3001/api/book/post',
+            url: apiUrl('/api/book/post'),
             data: formData
         }).then(response => {
             setIsPostSuccess({isSuccess: true, id: response.data.Last_id})

@@ -17,9 +17,11 @@ server.use(helmet.contentSecurityPolicy({
     }
 }))
 
-server.use(cors()).use(express.json()).use(express.urlencoded({
-    extended: true
+server.use(cors({
+    origin: process.env.CLIENT_URL || 'https://libraryreact2-production.up.railway.app'
 }))
+server.use(express.json())
+server.use(express.urlencoded({ extended: true }))
 
 server.use('/', router)
 

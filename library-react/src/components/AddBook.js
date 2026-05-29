@@ -1,14 +1,14 @@
 import { useState, useEffect} from 'react'
 import axios from 'axios'
-
+import { apiUrl } from '../config/api'
 
 const AddBook =(props)=>{
     const [authors, setAuthors] = useState([])
     const [publishers, setPublishers] = useState([])
 
     useEffect(()=>{
-        const authorUrl = 'http://localhost:3001/api/author'
-        const pubUrl = 'http://localhost:3001/api/publishing'
+        const authorUrl = apiUrl('/api/author')
+        const pubUrl = apiUrl('/api/publishing')
 
         axios.get(authorUrl).then(res => setAuthors(res.data))
         axios.get(pubUrl).then(res => setPublishers(res.data))

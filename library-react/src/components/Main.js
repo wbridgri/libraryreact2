@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import { Link } from 'react-router';
+import { apiUrl } from '../config/api';
 
 const Main = () => {
     const [featuredBooks, setFeaturedBooks] = useState([]);
 
     useEffect(() => {
         //ChatGpt Randomizer 
-        axios.get('http://localhost:3001/api/book')
+        axios.get(apiUrl('/api/book'))
             .then(res => {
                 const books = res.data;
                 const shuffled = books.sort(() => 0.5 - Math.random());

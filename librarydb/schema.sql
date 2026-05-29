@@ -35,7 +35,7 @@ create table book(
     copyright_year YEAR,
     edition tinyint unsigned NOT NULL,
     edition_year YEAR,
-    binding enum('paperback', 'hardback'),
+    binding enum('paperback', 'hardback') DEFAULT 'paperback',
     rating enum('1', '2', '3', '4', '5'),
     language varchar(4),
     qty tinyint unsigned NOT NULL,

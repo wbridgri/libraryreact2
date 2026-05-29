@@ -7,6 +7,7 @@ const Main = () => {
     const [featuredBooks, setFeaturedBooks] = useState([]);
 
     useEffect(() => {
+        //ChatGpt Randomizer 
         axios.get('http://localhost:3001/api/book')
             .then(res => {
                 const books = res.data;

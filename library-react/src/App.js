@@ -22,7 +22,7 @@ const App =()=>{
         edition: 0,
         edition_year: '',
         format_id: 0,
-        binding: '',
+        binding: 'paperback',
         rating: '',
         language: '',
         num_pages: 0,

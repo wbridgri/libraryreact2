@@ -34,10 +34,10 @@ const AddBook =(props)=>{
                             <div className="col">
                                 <label htmlFor="author_id" className="form-label">Author:</label>
                                 <select id="author_id" name="author_id" className="form-select" onChange={props.handleChange}>
-                                  <option value="">Select an author</option>
-                                  {authors.map((a) => (
+                                <option value="">Select an author</option>
+                                {authors.map((a) => (
                                     <option key={a.author_id} value={a.author_id}>{a.author}</option>
-                                  ))}
+                                ))}
                                 </select>
                             </div>
                         </div>
@@ -45,10 +45,10 @@ const AddBook =(props)=>{
                             <div className="col">
                                 <label htmlFor="pub_id" className="form-label">Publisher:</label>
                                 <select id="pub_id" name="pub_id" className="form-select" onChange={props.handleChange}>
-                                  <option value="">Select a publisher</option>
-                                  {publishers.map((p) => (
+                                <option value="">Select a publisher</option>
+                                {publishers.map((p) => (
                                     <option key={p.pub_id} value={p.pub_id}>{p.publisher}</option>
-                                  ))}
+                                ))}
                                 </select>
                             </div>
                         </div>

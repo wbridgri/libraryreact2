@@ -33,9 +33,8 @@ router.get('/:id', (req, res)=>{
     dao.findBookById(res, dao.table, req.params.id)
 })
 
-//post => localhost:3001/api/book/post
-router.post('/post', (req, res)=>{
-    dao.create(req, res, dao.table)
+router.post('/post', (req, res) => {
+    res.status(403).json({ error: true, message: 'Adding books is disabled' })
 })
 
 

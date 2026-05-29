@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Routes, Route } from "react-router"
 import axios from "axios"
 import { apiUrl } from "./config/api"
+import { ADD_BOOK_ENABLED } from "./config/features"
 
 import Header from "./components/Header"
 import Main from "./components/Main"
@@ -61,6 +62,10 @@ const App =()=>{
 
     const handleSubmit =(e)=> {
         e.preventDefault()
+
+        if (!ADD_BOOK_ENABLED) {
+            return
+        }
 
         axios({
             method: 'post',

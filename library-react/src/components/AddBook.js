@@ -1,9 +1,7 @@
 import { useState, useEffect} from 'react'
 import axios from 'axios'
 import { apiUrl } from '../config/api'
-
-// Set to true to turn the add book form back on
-const ADD_BOOK_ENABLED = false
+import { ADD_BOOK_ENABLED } from '../config/features'
 
 const AddBook =(props)=>{
     const [authors, setAuthors] = useState([])

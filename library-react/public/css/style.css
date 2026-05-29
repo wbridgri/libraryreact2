@@ -92,3 +92,28 @@ a {
 a:visited {
     color: #eaeae2;
 }
+
+.all-data-heading {
+    margin-bottom: 1.5rem;
+}
+
+.data-figure {
+    background-color: #1a1f26;
+    border-radius: 7px;
+    box-shadow: 5px 15px 15px -13px rgba(0, 0, 0, 0.75);
+    padding: 1.25rem 1rem;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.75s ease-in-out;
+}
+
+.data-figure:hover {
+    transform: scale(1.05);
+}
+
+.data-figure a {
+    width: 100%;
+}

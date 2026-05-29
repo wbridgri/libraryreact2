@@ -2,11 +2,16 @@ import { useState, useEffect} from 'react'
 import axios from 'axios'
 import { apiUrl } from '../config/api'
 
+// Set to true to turn the add book form back on
+const ADD_BOOK_ENABLED = false
+
 const AddBook =(props)=>{
     const [authors, setAuthors] = useState([])
     const [publishers, setPublishers] = useState([])
 
     useEffect(()=>{
+        if (!ADD_BOOK_ENABLED) return
+
         const authorUrl = apiUrl('/api/author')
         const pubUrl = apiUrl('/api/publishing')
 
@@ -14,9 +19,15 @@ const AddBook =(props)=>{
         axios.get(pubUrl).then(res => setPublishers(res.data))
     }, [])
 
-    // console.log(authors)
-    // console.log(publishers)
-
+    if (!ADD_BOOK_ENABLED) {
+        return (
+            <main className="add-book" id="addBooks">
+                <div className="container">
+                    <h2>Adding books is currently disabled.</h2>
+                </div>
+            </main>
+        )
+    }
 
     return(
         <>

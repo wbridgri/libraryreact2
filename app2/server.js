@@ -1,6 +1,6 @@
 const express = require('express')
 const server = express()
-const router =require('../app2/routes/router')
+const router =require('./routes/router')
 const helmet = require('helmet')
 const cors = require('cors')
 const PORT = process.env.PORT || 3001

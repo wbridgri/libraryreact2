@@ -1,22 +1,25 @@
 import { Link } from "react-router"
 
-
-const BookCard =(props)=> {
-
+const BookCard = (props) => {
     return (
         <div className="col">
-            <div className="card h-100 w-100">
-                <img src={`/images/${props.cover_image}`} alt="the title of the book" className="img-fluid image card-img-top" />
+            <article className="card h-100">
+                <Link to={`/book/${props.id}`}>
+                    <img
+                        src={`/images/${props.cover_image}`}
+                        alt={props.title}
+                        className="card-img-top"
+                    />
+                </Link>
                 <section className="card-body">
                     <h5 className="card-title text-capitalize">{props.title}</h5>
-                    
                 </section>
                 <footer className="card-footer">
-                    <button className="btn view-btn">
-                        <Link to={`/book/${props.id}`}>View more</Link>
-                    </button>
+                    <Link to={`/book/${props.id}`} className="view-btn">
+                        View details
+                    </Link>
                 </footer>
-            </div>
+            </article>
         </div>
     )
 }

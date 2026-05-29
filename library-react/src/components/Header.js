@@ -1,16 +1,16 @@
+import { Link } from "react-router"
 import Nav from "./Nav"
 
-const Header =()=>{
-    return(
-        <header className="header" id="header">
+const Header = () => {
+    return (
+        <header className="site-header" id="header">
             <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <h1 className="heading text-capitalize">Library</h1>
-                    </div>
-                    <div className="col">
-                        <Nav />
-                    </div>
+                <div className="site-header-inner">
+                    <Link to="/" className="site-brand">
+                        <h1 className="site-title">Library</h1>
+                        <p className="site-tagline">Discover books &amp; authors</p>
+                    </Link>
+                    <Nav />
                 </div>
             </div>
         </header>

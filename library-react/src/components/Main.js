@@ -7,11 +7,10 @@ const Main = () => {
     const [featuredBooks, setFeaturedBooks] = useState([]);
 
     useEffect(() => {
-        //ChatGpt Randomizer 
         axios.get(apiUrl('/api/book'))
             .then(res => {
                 const books = res.data;
-                const shuffled = books.sort(() => 0.5 - Math.random());
+                const shuffled = [...books].sort(() => 0.5 - Math.random());
                 setFeaturedBooks(shuffled.slice(0, 4));
             })
             .catch(err => console.error('Error fetching books:', err));
@@ -20,19 +19,26 @@ const Main = () => {
     return (
         <main className="main" id="main">
             <div className="container">
-                <h2 className="text-center mb-4 featured">Featured Books</h2>
-                <div className="row">
+                <header className="page-header">
+                    <span className="section-label">Welcome</span>
+                    <h2 className="page-title">Featured Books</h2>
+                    <p className="page-subtitle">A curated pick from our collection</p>
+                </header>
+                <div className="row g-4 featured-grid justify-content-center">
                     {featuredBooks.map(book => (
-                        <div className="col-md-3 mb-4" key={book.book_id}>
-                            <div className=" main-card card h-100">
-                            <Link to={`/book/${book.book_id}`}>
-                                <img
-                                    src={`/images/${book.cover_image}`}
-                                    className="card-img-top"
-                                    alt={book.title}
-                                />
-                            </Link>
-                            </div>
+                        <div className="col-6 col-md-3" key={book.book_id}>
+                            <article className="main-card card h-100">
+                                <Link to={`/book/${book.book_id}`}>
+                                    <img
+                                        src={`/images/${book.cover_image}`}
+                                        className="card-img-top"
+                                        alt={book.title}
+                                    />
+                                </Link>
+                                <div className="featured-card-body">
+                                    <h3 className="featured-card-title">{book.title}</h3>
+                                </div>
+                            </article>
                         </div>
                     ))}
                 </div>
@@ -41,4 +47,4 @@ const Main = () => {
     );
 };
 
-export default Main
+export default Main;

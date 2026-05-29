@@ -33,7 +33,11 @@ const AllData =( {table, name} )=> {
     return (
         <main className="main" id="alllDataMain">
             <div className="container">
-                <h2 className="all-data-heading text-capitalize text-center">All {name}s</h2>
+                <header className="page-header">
+                    <span className="section-label">Browse</span>
+                    <h2 className="page-title all-data-heading text-capitalize">All {name}s</h2>
+                    <p className="page-subtitle">Select a {name} to view related books</p>
+                </header>
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
                     { allDataCardComponents }
                 </div>

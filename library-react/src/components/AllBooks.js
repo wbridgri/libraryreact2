@@ -58,7 +58,13 @@ const AllBooks =(props)=>{
     return (
         <main className="main" id="AllBooksMain">
             <div className="container">
-                <h2 className="text-capitalize text-center">Choose your favorite</h2>
+                <header className="page-header">
+                    <span className="section-label">Catalog</span>
+                    <h2 className="page-title text-capitalize">
+                        {table === 'book' ? 'All Books' : `Books — ${heading}`}
+                    </h2>
+                    <p className="page-subtitle">Explore titles in our collection</p>
+                </header>
                 {/* <p className="text-end">
                     <Link to="/addBook">Add a Book </Link>
                 </p> */}

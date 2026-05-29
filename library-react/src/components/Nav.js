@@ -1,16 +1,18 @@
 import { NavLink } from "react-router"
 
-const Nav =()=> {
+const navClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link"
 
+const Nav = () => {
     return (
-            <nav className="nav top-nav justify-content-center justify-content-md-between">
-                <NavLink to="/" className="nav-link">Home</NavLink>
-                <NavLink to="/book" className="nav-link">Books</NavLink>
-                <NavLink to="/author" className="nav-link">Authors</NavLink>
-                <NavLink to="/publishing" className="nav-link">Publishing Company</NavLink>
-                <NavLink to="/format" className="nav-link">Format</NavLink>
-                <NavLink to="/genre" className="nav-link">Genre</NavLink>
-            </nav>
+        <nav className="top-nav" aria-label="Main navigation">
+            <NavLink to="/" className={navClass} end>Home</NavLink>
+            <NavLink to="/book" className={navClass}>Books</NavLink>
+            <NavLink to="/author" className={navClass}>Authors</NavLink>
+            <NavLink to="/publishing" className={navClass}>Publishers</NavLink>
+            <NavLink to="/format" className={navClass}>Format</NavLink>
+            <NavLink to="/genre" className={navClass}>Genre</NavLink>
+        </nav>
     )
 }
 

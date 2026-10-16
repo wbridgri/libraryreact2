@@ -16,7 +16,7 @@ router.get('/genre/:id', (req, res)=>{
 
 
 router.post('/genre/update/:id', (req, res)=>{
-    dao.update(req, res, dao.table)
+    res.status(403).json({ error: true, message: 'Updating genres is disabled is disabled' })
 })
 
 module.exports = router

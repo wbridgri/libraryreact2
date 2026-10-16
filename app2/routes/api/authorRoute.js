@@ -17,8 +17,8 @@ router.get('/author/:id', (req, res)=>{
 })
 
 //localhost:3001/author/post
-router.post('/post', (req, res)=>{
-    dao.create(req, res, dao.table)
+router.post('/post', (req, res) => {
+    res.status(403).json({ error: true, message: 'Adding authors is disabled' })
 })
 
 

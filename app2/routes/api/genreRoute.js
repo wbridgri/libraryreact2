@@ -16,7 +16,7 @@ router.get('/genre/:id', (req, res)=>{
 
 
 router.post('/genre/update/:id', (req, res)=>{
-    res.status(403).json({ error: true, message: 'Updating genres is disabled is disabled' })
+    res.status(403).json({ error: true, message: 'Updating genres is disabled' })
 })
 
 module.exports = router

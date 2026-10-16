@@ -20,7 +20,8 @@ const bookDao = {
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+                    console.error(`DAO ERROR: ${table}`, error);
+                    res.status(500).json({ error: true, message: 'Database error'})
                 }
             }
         )
@@ -34,7 +35,8 @@ const bookDao = {
             JOIN author a USING (author_id)
             JOIN publisher p USING (pub_id)
             JOIN format f USING (format_id)
-            WHERE b.book_id = ${id};`,
+            WHERE b.book_id = ?;`,
+            [id],
             (error, rows) =>{
                 if(!error){
                     if(rows.length === 1){
@@ -43,7 +45,8 @@ const bookDao = {
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+                    console.error(`DAO ERROR: ${table}`, error);
+                    res.status(500).json({ error: true, message: 'Database error'})
                 }
             }
         )
@@ -65,7 +68,8 @@ const bookDao = {
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+                    console.error(`DAO ERROR: ${table}`, error);
+                    res.status(500).json({ error: true, message: 'Database error'})
                 }
             }
         )
@@ -79,7 +83,8 @@ const bookDao = {
             JOIN author a USING (author_id)
             JOIN publisher p USING (pub_id)
             JOIN format f USING (format_id)
-            WHERE b.rating = '${rating}' ORDER BY b.book_id;`,
+            WHERE b.rating = ? ORDER BY b.book_id;`,
+            [rating],
             (error, rows) =>{
                 if(!error){
                     if(rows.length === 1){
@@ -88,7 +93,8 @@ const bookDao = {
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+                    console.error(`DAO ERROR: ${table}`, error);
+                    res.status(500).json({ error: true, message: 'Database error'})
                 }
             }
         )
@@ -101,7 +107,8 @@ const bookDao = {
             JOIN author a USING (author_id)
             JOIN publisher p USING (pub_id)
             JOIN format f USING (format_id)
-            WHERE b.binding = '${binding}' ORDER BY b.book_id;`,
+            WHERE b.binding = ? ORDER BY b.book_id;`,
+            [binding],
             (error, rows) =>{
                 if(!error){
                     if(rows.length === 1){
@@ -110,7 +117,8 @@ const bookDao = {
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+                    console.error(`DAO ERROR: ${table}`, error);
+                    res.status(500).json({ error: true, message: 'Database error'})
                 }
             }
         )

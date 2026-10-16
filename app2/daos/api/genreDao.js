@@ -13,7 +13,8 @@ const genreDao = {
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+console.error(`DAO ERROR: ${table}`, error)
+res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )
@@ -28,13 +29,15 @@ const genreDao = {
             JOIN format f USING (format_id)
             JOIN book_to_genre bg ON b.book_id = bg.book_id
             JOIN genre g ON bg.genre_id = g.genre_id
-            WHERE g.genre_id = '${id}'
+            WHERE g.genre_id = ?
             ORDER BY g.genre_id;`,
+            [id],
             (error, rows) =>{
                 if(!error){
                     res.json(rows)
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+console.error(`DAO ERROR: ${table}`, error)
+res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )

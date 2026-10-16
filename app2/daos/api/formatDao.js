@@ -13,7 +13,8 @@ const formatDao ={
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+console.error(`DAO ERROR: ${table}`, error)
+res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )
@@ -26,14 +27,16 @@ const formatDao ={
             JOIN author a USING (author_id)
             JOIN publisher p USING (pub_id)
             JOIN format f USING (format_id)
-            WHERE f.format_id = '${id}'
+            WHERE f.format_id = ?
             ORDER BY b.title;
             `,
+            [id],
             (error, rows) =>{
                 if(!error) {
                     res.json(rows)
                 } else {
-                    console.log(`DAO ERROR : ${table}`, error)
+                    cconsole.error(`DAO ERROR: ${table}`, error)
+                    res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )

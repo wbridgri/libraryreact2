@@ -32,8 +32,7 @@ function getDbConfig() {
     const password =
         process.env.DB_PASSWORD ||
         process.env.MYSQLPASSWORD ||
-        process.env.MYSQL_PASSWORD ||
-        'rootroot'
+        process.env.MYSQL_PASSWORD 
 
     const database =
         process.env.DB_NAME ||

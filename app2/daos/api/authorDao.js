@@ -16,7 +16,8 @@ const authorDao ={
                         res.json(rows)
                     }
                 } else {
-                    console.error(res.status(500).json({ error: true, message: 'Database error' }))
+                    console.error;
+                    res.status(500).json({ error: true, message: 'Database error' });
                 }
             }
         )

@@ -16,7 +16,7 @@ const authorDao ={
                         res.json(rows)
                     }
                 } else {
-                    console.log(console.log(`DAO ERROR: ${table}`, error))
+                    console.error(res.status(500).json({ error: true, message: 'Database error' }))
                 }
             }
         )
@@ -29,9 +29,10 @@ const authorDao ={
             JOIN author a USING (author_id)
             JOIN publisher p USING (pub_id)
             JOIN format f using (format_id)
-            WHERE a.author_id = '${id}'
+            WHERE a.author_id = ?
             ORDER BY b.title;
             `,
+            [id],
             (error, rows) =>{
                 if(!error) {
                     res.json(rows)

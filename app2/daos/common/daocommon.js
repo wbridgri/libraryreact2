@@ -12,7 +12,8 @@ const daoCommom ={
                         res.json(rows)
                     } 
                 } else {
-                    console.log(`DAO ERROR: ${table} `, error)
+                    console.error(`DAO ERROR: ${table} `, error);
+                    res.status(500).json({ error: true, message: 'Database error' });
                 }
             }
         )
@@ -20,7 +21,8 @@ const daoCommom ={
 
     findById: (res, table, id)=>{
         con.query(
-            `SELECT * FROM ${table} WHERE ${table}_id = ${id};`,
+            `SELECT * FROM ${table} WHERE ${table}_id = ?`,
+            [id],
             (error, rows) =>{
                 if(!error){
                     if(rows.length === 1){
@@ -29,7 +31,8 @@ const daoCommom ={
                         res.json(rows)
                     } 
                 } else {
-                    console.log(`DAO ERROR: ${table}`, error)
+                    console.error(`DAO ERROR: ${table}`, error)
+                    res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )
@@ -45,7 +48,8 @@ const daoCommom ={
                         res.json(rows)
                     } 
                 } else {
-                    console.log(`DAO ERROR: ${table}`, error)
+                    console.error(`DAO ERROR: ${table}`, error)
+                    res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )
@@ -64,7 +68,9 @@ const daoCommom ={
                     }
                 } else {
                     // do something eles
-                    console.log('DAO ERROR: ', error)
+                    console.error('DAO ERROR: ', error);
+                    res.status(500).json({ error: true, message: 'Database error' });
+
                 }
             }
         )
@@ -91,7 +97,9 @@ const daoCommom ={
                             Last_id: dbres.insertId
                         })
                     } else {
-                        console.log(`${table}Dao error `, error)
+                        console.error(`${table}Dao error `, error);
+                        res.status(500).json({ error: true, message: 'Database error' });
+
                     }
                 }
             )

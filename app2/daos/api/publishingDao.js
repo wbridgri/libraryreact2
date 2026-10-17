@@ -52,10 +52,10 @@ res.status(500).json({ error: true, message: 'Database error' })
             [id],
             (error, rows) =>{
                 if(!error){
-                res.json(rows)
+                    res.json(rows)
                 } else {
-console.error(`DAO ERROR: ${table}`, error)
-res.status(500).json({ error: true, message: 'Database error' })
+                    console.error(`DAO ERROR: ${table}`, error)
+                    res.status(500).json({ error: true, message: 'Database error' })
                 }
             }
         )

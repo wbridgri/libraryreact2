@@ -35,7 +35,7 @@ res.status(500).json({ error: true, message: 'Database error' })
                 if(!error) {
                     res.json(rows)
                 } else {
-                    cconsole.error(`DAO ERROR: ${table}`, error)
+                    console.error(`DAO ERROR: ${table}`, error)
                     res.status(500).json({ error: true, message: 'Database error' })
                 }
             }

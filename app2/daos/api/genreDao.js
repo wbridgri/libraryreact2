@@ -41,28 +41,7 @@ const genreDao = {
                 }
             }
         )
-    },
-
-
-
-    update:(req, res, id)=>{
-    
-            const data = req.body.genre_id.map(item => {
-                return {"book_id": id, "genre_id": item }
-            })
-    
-            data.forEach(obj => {
-                con.execute(
-                    `INSERT INTO book_to_genre (book_id, genre_id)
-                    VALUES (${obj.book_id}, ${obj.genre_id});`,
-                    (error, dbres)=>{
-                        if(error){
-                            res.send(error)
-                        }
-                    }
-                )
-            })
-        }
+    }
 }
 
 
